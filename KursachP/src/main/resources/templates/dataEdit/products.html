@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="product : ${products}">
+    <a th:href="@{/edit/products/{id}(id=${product.getId()})}"
+    th:text="${product.getId() + ', ' + product.getProductName() + ', ' + product.getColor()
+    + ', ' + product.getSize() + ', ' + product.getAmount() + ', ' + product.getPrice()}">product</a>
+</div>
+
+<form th:method="POST" th:action="@{/edit/newProduct}" th:object="${newProduct}">
+    <label for="productName">Enter productName: </label>
+    <input type="text" th:field="*{productName}" id="productName"/>
+    <br/>
+    <label for="color">Enter color: </label>
+    <input type="text" th:field="*{color}" id="color"/>
+    <br/>
+    <label for="size">Enter size: </label>
+    <input type="text" th:field="*{size}" id="size"/>
+    <br/>
+    <label for="amount">Enter amount: </label>
+    <input type="text" th:field="*{amount}" id="amount"/>
+    <br/>
+    <label for="price">Enter price: </label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <br/>
+    <input type="submit" value="Add!"/>
+</form>
+
+<hr/>
+</body>
+</html>

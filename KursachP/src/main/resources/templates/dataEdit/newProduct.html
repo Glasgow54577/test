@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <a th:text="${newProduct.getId() + ', ' + newProduct.getProductName() + ', ' + newProduct.getColor()
+    + ', ' + newProduct.getSize() + ', ' + newProduct.getAmount() + ', ' + newProduct.getPrice()}">product</a>
+
+<form th:method="GET" th:action="@{/edit/products}">
+<input type="submit" value="Back"/>
+</form>
+
+</body>
+</html>

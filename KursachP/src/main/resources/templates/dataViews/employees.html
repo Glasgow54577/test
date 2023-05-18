@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr/>
+<b>View employees:</b>
+
+<form method="POST" action="/view/employees">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+    <label for="search">Search</label>
+    <input name="search" type="text" id="search"/>
+    <br/>
+    <input type="submit" value="Search!"/>
+</form>
+<br/>
+<table th:each="employee : ${employees}">
+    <tr th:text="${employee.getId() + ', ' + employee.getEmployeeName() + ', ' + employee.getAge()
+    + ', ' + employee.getRole() + ', ' + employee.getEmail() + ', ' + employee.getPhoneNumber()
+    + ', ' + employee.getWorkTime() + ', ' + employee.getRatePerHour()}">employee</tr>
+</table>
+<hr/>
+</body>
+</html>

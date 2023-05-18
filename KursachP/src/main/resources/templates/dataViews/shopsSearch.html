@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table th:each="shop : ${shopsSearch}">
+  <tr th:text="${shop.getId() + ', ' + shop.getNameShop() + ', ' + shop.getAddress()
+    + ', ' + shop.getPhoneNumber()}">shop</tr>
+</table>
+<hr/>
+<form th:method="GET" th:action="@{/view/shops}">
+  <input type="submit" value="Shops"/>
+</form>
+</body>
+</html>

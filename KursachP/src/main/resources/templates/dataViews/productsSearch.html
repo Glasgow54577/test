@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table th:each="product : ${productsSearch}">
+  <tr th:text="${product.getId() + ', ' + product.getProductName() + ', ' + product.getColor()
+    + ', ' + product.getSize() + ', ' + product.getAmount() + ', ' + product.getPrice()}">product</tr>
+</table>
+<hr/>
+<form th:method="GET" th:action="@{/view/products}">
+  <input type="submit" value="Products"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table th:each="order : ${ordsSearch}">
+    <tr  th:text="${order.getNameProduct() + ', ' + order.getAmount()
+    + ', ' + order.getNumberOrder() + ', ' + order.getPriceSum()}">order</tr>
+</table>
+<hr/>
+<form th:method="GET" th:action="@{/view/ords}">
+    <input type="submit" value="Orders"/>
+</form>
+
+</body>
+</html>

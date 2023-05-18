@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/edit/shops/{id}(id=${shop.getId()})}" th:object="${shop}">
+  <label for="nameShop">Enter nameShop: </label>
+  <input type="text" th:field="*{nameShop}" id="nameShop"/>
+  <br/>
+  <label for="address">Enter address: </label>
+  <input type="text" th:field="*{address}" id="address"/>
+  <br/>
+  <label for="phoneNumber">Enter phoneNumber: </label>
+  <input type="text" th:field="*{phoneNumber}" id="phoneNumber"/>
+  <br/>
+  <input type="submit" value="Update!"/>
+</form>
+
+<form th:method="DELETE" th:action="@{/edit/shops/{id}(id=${shop.getId()})}" >
+  <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

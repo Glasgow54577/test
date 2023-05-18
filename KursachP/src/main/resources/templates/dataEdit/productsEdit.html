@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/edit/products/{id}(id=${product.getId()})}" th:object="${product}">
+    <label for="productName">Enter productName: </label>
+    <input type="text" th:field="*{productName}" id="productName"/>
+    <br/>
+    <label for="color">Enter color: </label>
+    <input type="text" th:field="*{color}" id="color"/>
+    <br/>
+    <label for="size">Enter size: </label>
+    <input type="text" th:field="*{size}" id="size"/>
+    <br/>
+    <label for="amount">Enter amount: </label>
+    <input type="text" th:field="*{amount}" id="amount"/>
+    <br/>
+    <label for="price">Enter price: </label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+<form th:method="DELETE" th:action="@{/edit/products/{id}(id=${product.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

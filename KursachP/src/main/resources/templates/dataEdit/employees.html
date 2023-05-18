@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:each="employee : ${employees}">
+    <a th:href="@{/edit/employees/{id}(id=${employee.getId()})}"
+       th:text="${employee.getEmployeeName() + ', ' + employee.getAge()
+    + ', ' + employee.getRole() + ', ' + employee.getEmail() + ', ' + employee.getPhoneNumber()
+    + ', ' + employee.getWorkTime() + ', ' + employee.getRatePerHour()}">product</a>
+</div>
+
+<form th:method="POST" th:action="@{/edit/employees}" th:object="${newEmployee}">
+    <label for="employeeName">Enter employeeName: </label>
+    <input type="text" th:field="*{employeeName}" id="employeeName"/>
+    <br/>
+    <label for="age">Enter age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <br/>
+    <label for="email">Enter email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <br/>
+    <label for="phoneNumber">Enter phoneNumber: </label>
+    <input type="text" th:field="*{phoneNumber}" id="phoneNumber"/>
+    <br/>
+    <label for="workTime">Enter workTime: </label>
+    <input type="text" th:field="*{workTime}" id="workTime"/>
+    <label for="ratePerHour">Enter ratePerHour: </label>
+    <input type="text" th:field="*{ratePerHour}" id="ratePerHour"/>
+    <br/>
+    <label for="username">Enter username: </label>
+    <input type="text" th:field="*{username}" id="username"/>
+    <br/>
+    <label for="password">Enter password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <br/>
+    <label for="role">Enter role: </label>
+    <input type="text" th:field="*{role}" id="role"/>
+    <br/>
+    <input type="submit" value="Add!"/>
+</form>
+
+<hr/>
+
+</body>
+</html>

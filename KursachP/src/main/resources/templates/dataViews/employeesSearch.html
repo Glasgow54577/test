@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table th:each="employee : ${employeesSearch}">
+    <tr th:text="${employee.getId() + ', ' + employee.getEmployeeName() + ', ' + employee.getAge()
+    + ', ' + employee.getRole() + ', ' + employee.getEmail() + ', ' + employee.getPhoneNumber()
+    + ', ' + employee.getWorkTime() + ', ' + employee.getRatePerHour()}">employee</tr>
+</table>
+<hr/>
+<form th:method="GET" th:action="@{/view/employees}">
+    <input type="submit" value="Employees"/>
+</form>
+</body>
+</html>

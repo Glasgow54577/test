@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div th:each="shop : ${shops}">
+  <a th:href="@{/edit/shops/{id}(id=${shop.getId()})}"
+     th:text="${shop.getId() + ', ' + shop.getNameShop() + ', ' + shop.getAddress()
+    + ', ' + shop.getPhoneNumber()}">shop</a>
+</div>
+
+<form th:method="POST" th:action="@{/edit/newShop}" th:object="${newShop}">
+  <label for="nameShop">Enter shopName: </label>
+  <input type="text" th:field="*{nameShop}" id="nameShop"/>
+  <br/>
+  <label for="address">Enter address: </label>
+  <input type="text" th:field="*{address}" id="address"/>
+  <br/>
+  <label for="phoneNumber">Enter phoneNumber: </label>
+  <input type="text" th:field="*{phoneNumber}" id="phoneNumber"/>
+  <br/>
+  <input type="submit" value="Add!"/>
+</form>
+
+<hr/>
+</body>
+</html>
